@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const services = [
   {
     number: "01",

@@ -11,7 +11,7 @@ const navigation = [
 export function SiteHeader() {
   return (
     <header className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-4">
+      <div className="relative mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-4">
           <Image
             src="/intertech-icon-noBg.png"
@@ -39,21 +39,60 @@ export function SiteHeader() {
             </p>
           </div>
         </Link>
+        <>
+          <nav
+            className="hidden items-center gap-7 md:flex"
+            aria-label="Main navigation"
+          >
+            {navigation.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium text-slate-600 transition-colors hover:text-[#12346b]"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
 
-        <nav
-          className="hidden items-center gap-7 md:flex"
-          aria-label="Main navigation"
-        >
-          {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-slate-600 transition-colors hover:text-[#12346b]"
+          <details className="relative md:hidden">
+            <summary
+              className="cursor-pointer list-none rounded-lg border border-slate-200 p-2 text-[#12346b] [&::-webkit-details-marker]:hidden"
+              aria-label="Open navigation menu"
             >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-5 w-5"
+                aria-hidden="true"
+              >
+                <path d="M4 6h16" />
+                <path d="M4 12h16" />
+                <path d="M4 18h16" />
+              </svg>
+            </summary>
+
+            <nav
+              className="absolute right-0 top-12 z-20 w-56 rounded-xl border border-slate-200 bg-white p-2 shadow-lg"
+              aria-label="Mobile navigation"
+            >
+              {navigation.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[#12346b]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </details>
+        </>
       </div>
     </header>
   );
