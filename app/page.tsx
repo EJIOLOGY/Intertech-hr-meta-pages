@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const services = [
   {
     number: "01",
@@ -23,13 +25,13 @@ const legalDocuments = [
   {
     title: "Privacy Policy",
     description:
-      "Learn how Intertech HR Bot-Assistant collects, uses, retains and protects personal information.",
+      "Learn how InterTech HR Bot-Assistant collects, uses, retains and protects personal information.",
     href: "/privacy-policy",
   },
   {
     title: "Terms of Service",
     description:
-      "Review the terms and conditions governing the use of the Intertech HR Bot-Assistant.",
+      "Review the terms and conditions governing the use of the InterTech HR Bot-Assistant.",
     href: "/terms",
   },
   {
@@ -43,47 +45,47 @@ const legalDocuments = [
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
-      <div className="mx-auto w-full max-w-5xl px-6 py-16">
+      <div className="mx-auto w-full max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <section>
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
             Employee HR Service
           </p>
 
-          <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
-            Intertech HR Bot-Assistant
+          <h1 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+            InterTech HR Bot-Assistant
           </h1>
 
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+          <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:mt-5 sm:text-lg sm:leading-8">
             HR information and employee support through WhatsApp.
           </p>
 
-          <p className="mt-4 max-w-3xl leading-7 text-slate-600">
-            The Intertech HR Bot-Assistant provides employees with convenient
+          <p className="mt-3 max-w-3xl leading-7 text-slate-600 sm:mt-4">
+            The InterTech HR Bot-Assistant provides employees with convenient
             access to HR-approved information, supported employee services and
             assistance from authorised HR personnel.
           </p>
         </section>
 
-        <section className="mt-14">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+        <section className="mt-12 sm:mt-14 lg:mt-16">
+          <h2 className="text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">
             What this service provides
           </h2>
 
-          <div className="mt-6 grid gap-5 md:grid-cols-3">
+          <div className="mt-5 grid gap-4 sm:mt-6 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
             {services.map((service) => (
               <article
                 key={service.title}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-sm font-bold text-blue-700">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-sm font-bold text-blue-700 sm:h-10 sm:w-10">
                   {service.number}
                 </div>
 
-                <h3 className="mt-5 text-lg font-semibold text-slate-950">
+                <h3 className="mt-4 text-base font-semibold text-slate-950 sm:mt-5 sm:text-lg">
                   {service.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-2 text-sm leading-6 text-slate-600 sm:mt-3">
                   {service.description}
                 </p>
               </article>
@@ -91,32 +93,32 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="mt-16">
-          <div className="border-b border-slate-200 pb-5">
+        <section className="mt-12 sm:mt-14 lg:mt-16">
+          <div className="border-b border-slate-200 pb-4 sm:pb-5">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
               Public Information
             </p>
 
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950">
+            <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">
               Legal Documents
             </h2>
 
             <p className="mt-2 max-w-2xl leading-7 text-slate-600">
-              Review the documents that explain how the Intertech HR
+              Review the documents that explain how the InterTech HR
               Bot-Assistant operates and how information provided through the
               service is handled.
             </p>
           </div>
 
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <div className="mt-5 grid gap-4 sm:mt-6 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
             {legalDocuments.map((document) => (
-              <a
+              <Link
                 key={document.href}
                 href={document.href}
-                className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md"
+                className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md sm:p-6"
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-sm font-bold text-blue-700">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-sm font-bold text-blue-700 sm:h-10 sm:w-10">
                     →
                   </div>
 
@@ -128,18 +130,18 @@ export default function HomePage() {
                   </span>
                 </div>
 
-                <h3 className="mt-6 text-lg font-semibold text-slate-950">
+                <h3 className="mt-5 text-base font-semibold text-slate-950 sm:mt-6 sm:text-lg">
                   {document.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-2 text-sm leading-6 text-slate-600 sm:mt-3">
                   {document.description}
                 </p>
 
-                <p className="mt-5 text-sm font-semibold text-blue-700">
+                <p className="mt-4 text-sm font-semibold text-blue-700 sm:mt-5">
                   View document
                 </p>
-              </a>
+              </Link>
             ))}
           </div>
         </section>

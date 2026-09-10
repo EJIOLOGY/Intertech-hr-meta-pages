@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navigation = [
   { label: "Home", href: "/" },
@@ -9,13 +12,16 @@ const navigation = [
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href;
+
   return (
     <header className="border-b border-slate-200 bg-white">
       <div className="relative mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-4">
           <Image
             src="/intertech-icon-noBg.png"
-            alt="Intertech Systems Limited logo"
+            alt="InterTech Systems Limited logo"
             width={56}
             height={56}
             className="h-12 w-12 object-contain"
@@ -25,7 +31,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-4">
             <div>
               <p className="text-sm font-bold leading-tight text-[#12346b]">
-                Intertech
+                InterTech
               </p>
               <p className="text-xs font-semibold leading-tight text-[#12346b]">
                 Systems Limited
@@ -35,7 +41,7 @@ export function SiteHeader() {
             <div className="hidden h-9 w-px bg-slate-200 sm:block" />
 
             <p className="hidden text-sm font-medium text-slate-600 sm:block">
-              Intertech HR Bot-Assistant
+              InterTech HR Bot-Assistant
             </p>
           </div>
         </Link>
@@ -48,7 +54,12 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-slate-600 transition-colors hover:text-[#12346b]"
+                aria-current={isActive(item.href) ? "page" : undefined}
+                className={
+                  isActive(item.href)
+                    ? "text-sm font-semibold text-[#12346b]"
+                    : "text-sm font-medium text-slate-600 transition-colors hover:text-[#12346b]"
+                }
               >
                 {item.label}
               </Link>
@@ -85,7 +96,12 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[#12346b]"
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className={
+                    isActive(item.href)
+                      ? "block rounded-lg bg-slate-50 px-3 py-2.5 text-sm font-semibold text-[#12346b]"
+                      : "block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[#12346b]"
+                  }
                 >
                   {item.label}
                 </Link>

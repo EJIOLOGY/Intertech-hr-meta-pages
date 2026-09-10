@@ -14,15 +14,15 @@ export function SiteFooter() {
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/intertech-icon-noBg.png"
-            alt="Intertech Systems Limited logo"
+            alt="InterTech Systems Limited logo"
             width={44}
             height={44}
             className="h-10 w-10 object-contain"
           />
 
           <div>
-            <p className="text-sm font-semibold">Intertech Systems Limited</p>
-            <p className="text-xs text-slate-300">Intertech HR Bot-Assistant</p>
+            <p className="text-sm font-semibold">InterTech Systems Limited</p>
+            <p className="text-xs text-slate-300">InterTech HR Bot-Assistant</p>
           </div>
         </Link>
 
@@ -42,7 +42,7 @@ export function SiteFooter() {
         </nav>
 
         <p className="text-xs text-slate-400 md:text-right">
-          © 2026 Intertech Systems Limited. All rights reserved.
+          © 2026 InterTech Systems Limited (RC 1132175). All rights reserved.
         </p>
       </div>
     </footer>

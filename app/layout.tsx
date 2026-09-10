@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Intertech-hr-meta-pages",
+  title: {
+    default: "InterTech HR Bot-Assistant",
+    template: "%s | InterTech HR Bot-Assistant",
+  },
   description:
     "Public information and legal documents relating to the InterTech HR Bot-Assistant.",
   icons: {
