@@ -38,13 +38,12 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p className="mt-3 sm:mt-4">
-              InterTech Systems Limited (&quot;InterTech&quot;, &quot;we&quot;,
-              &quot;us&quot;, or &quot;our&quot;) operates the InterTech HR
-              Bot-Assistant, a WhatsApp-based HR service designed to provide
-              employees with convenient access to HR-approved information and
-              supported employee services. This Privacy Policy is intended to
-              comply with the Nigeria Data Protection Act 2023 and the Nigeria
-              Data Protection Regulation (NDPR), as well as other applicable
+              InterTech Systems Limited operates the InterTech HR Bot-Assistant,
+              a WhatsApp-based HR service designed to provide employees with
+              convenient access to HR-approved information and supported
+              employee services. This Privacy Policy is intended to comply with
+              the Nigeria Data Protection Act 2023 and the Nigeria Data
+              Protection Regulation (NDPR), as well as other applicable
               data-protection requirements.
             </p>
 
